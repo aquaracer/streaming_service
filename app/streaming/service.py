@@ -65,8 +65,8 @@ class VideoService:
             segment3.ts
             #EXT-X-ENDLIST
             """
-            playlist_path = f"media/hls/{video_id}.m3u8"
-            os.makedirs("media/hls", exist_ok=True)
+            playlist_path = f"media_hls/{video_id}.m3u8"
+            os.makedirs("media_hls", exist_ok=True)
 
             with open(playlist_path, "w") as file:
                 file.write(hls_content)
