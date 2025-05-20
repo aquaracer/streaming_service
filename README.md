@@ -4,17 +4,16 @@
 
 ```bash
 mkdir streaming-service
-streaming-service
+cd streaming-service
 git clone https://github.com/aquaracer/streaming_service.git
 ```
 
 2. Настройте переменные окружения в файле .env.
 
 
-3. Перейдите в папку с проектом, cоберите и запустите контейнеры:
+3. Cоберите и запустите контейнеры:
 
 ```bash
-cd streaming-service
 docker-compose up --build
 ```
 
