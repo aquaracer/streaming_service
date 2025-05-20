@@ -4,7 +4,7 @@
 ```bash
 mkdir streaming-service
 streaming-service
-git clone <repository-url>
+git clone [<repository-url>](https://github.com/aquaracer/streaming_service.git)
 ```
 
 2. Настройте переменные окружения в файле .env.
