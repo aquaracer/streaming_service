@@ -1,0 +1,49 @@
+version: "3.9"
+
+services:
+
+  app:
+    container_name: streaming_service
+    build: .
+    ports:
+      - '8000:8000'
+    volumes:
+      - .:/app
+    restart: always
+    env_file:
+      - .env
+    depends_on:
+      - db
+    networks:
+      - bridge
+
+
+  db:
+    container_name: db
+    image: postgres:16.2
+    restart: always
+    shm_size: 128mb
+    ports:
+      - '5432:5432'
+    env_file:
+      - .env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - bridge
+
+  cache:
+    container_name: cache
+    image: redis:7.2.4-alpine
+    restart: always
+    ports:
+      - '6379:6379'
+    networks:
+      - bridge
+
+networks:
+  bridge:
+    driver: bridge
+
+volumes:
+  pgdata:
